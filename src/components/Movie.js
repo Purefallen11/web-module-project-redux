@@ -46,7 +46,7 @@ const Movie = (props) => {
                         
                         <section>
                             <span className="m-2 btn btn-dark">Favorite</span>
-                            <span className="delete"><input type="button" className="m-2 btn btn-danger" value="Delete" onClick={deleteMovieAction}/></span>
+                            <span className="delete"><input type="button" className="m-2 btn btn-danger" value="Delete" onClick={() => deleteMovieAction(movie.id)}/></span>
                         </section>
                     </div>
                 </div>
@@ -61,4 +61,4 @@ const mapStateToProps = state =>{
     }
 }
 
-export default connect(mapStateToProps, {}) (Movie);
+export default connect(mapStateToProps, {deleteMovie}) (Movie);
